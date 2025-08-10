@@ -3,20 +3,30 @@
 
 // let numero = Number(prompt("Insira um número para descobrir se ele é par ou ímpar: "));
 
-// if (numero % 2 == 0) {
-//     alert("O número " + numero + " é par.");
+// if (isNaN(numero)) {     //  Função que verifica se o valor digitado realmente é um número
+//     alert("O valor informado não é um número.");
 // }
 
 // else {
-//     alert("O número " + numero + " é ímpar.");
+//     let mensagem = "O número " + numero;
+
+//     if (numero % 2 == 0) {
+//         mensagem += " é par.";
 // }
 
-// if (numero % 3 == 0) {
-//     alert("O número " + numero + " é múltiplo de 3.");
-// }
+//     else {
+//         mensagem +=  " é ímpar.";
+//     }
 
-// else if (numero % 5 == 0) {
-//     alert("O número " + numero + " é múltiplo de 5.");
+//     if (numero % 3 == 0) {
+//         mensagem += "\nEsse número é múltiplo de 3.";
+//     }
+
+//     if (numero % 5 == 0) {
+//         mensagem += "\nEsse número é múltiplo de 5.";
+//     }
+
+//     alert(mensagem)
 // }
 
 
@@ -29,45 +39,62 @@
 // let num2 = Number(prompt("Informe o segundo número:"));
 // let num3 = Number(prompt("Informe o terceiro número:"));
 
-// if (num1 > num2 && num1 > num3) {
-//     alert("O maior número que você digitou foi: " + num1);
-// }
-
-// else if (num2 > num1 && num2 > num3) {
-//     alert("O maior número que você digitou foi: " + num2);
+// if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+//     alert("Algum dos valores informados não é um número.");
 // }
 
 // else {
-//     alert("O maior número que você digitou foi: " + num3);
+//     let maior = Math.max(num1, num2, num3);     // Função que verifica qual dos elementos é o maior
+
+//     if (num1 == num2 && num2 == num3) {
+//         alert("Os números informados são todos iguais!")
+//     }
+
+//     else {
+
+//         let quantidade = 0;
+
+//         if (num1 === maior) quantidade++;
+//         if (num2 === maior) quantidade++;
+//         if (num3 === maior) quantidade++;
+
+//         if (quantidade > 1) {
+//             alert("Você informou mais de um número igual ao maior.\nO maior número informado foi: " + maior)
+//         }
+
+//         else {
+//             alert("O maior número que você informou foi: " + maior);
+//         }
+//     }
 // }
 
-// Exercício 3
-// Peça um número para o usuário e imprima a classificação de idade: bebe = < 2 / criança < 13 /adolescente < 18 / adulto < 60 / idoso >= 60
 
-// let idade = prompt("Informe sua idade (anos) para ver a sua classificação:");
+// // Exercício 3
+// // Peça um número para o usuário e imprima a classificação de idade: bebe = < 2 / criança < 13 /adolescente < 18 / adulto < 60 / idoso >= 60
 
-// if (idade < 0) {
-//     alert("A idade informada não é válida");
-// }
+// let entrada = prompt("Informe sua idade (anos) para ver a sua classificação:");
 
-// else if (idade < 2) {
-//     alert("Classificação: Bebê");
-// }
-
-// else if (idade < 13) {
-//     alert("Classificação: Criança");
-// }
-
-// else if (idade < 18) {
-//     alert("Classificação: Adolescente");
-// }
-
-// else if (idade < 60) {
-//     alert("Classificação: Adulto");
-// }
-
+// if (entrada === null || entrada.trim() === "" || isNaN(Number(entrada)) || Number(entrada) < 0) {
+//     alert("O valor informado é inválido.");
+// } 
 // else {
-//     alert("Classificação: Idoso");
+//     let idade = Number(entrada);
+
+//     if (idade < 2) {
+//         alert("Classificação: Bebê");
+//     } 
+//     else if (idade < 13) {
+//         alert("Classificação: Criança");
+//     } 
+//     else if (idade < 18) {
+//         alert("Classificação: Adolescente");
+//     } 
+//     else if (idade < 60) {
+//         alert("Classificação: Adulto");
+//     } 
+//     else {
+//         alert("Classificação: Idoso");
+//     }
 // }
 
 
@@ -75,22 +102,28 @@
 // Conversor de Unidades. Escreva um programa que permite ao usuário escolher entre converter uma temperatura de Celsius para Fahrenheit ou vice-versa. 
 // Solicite o valor e execute a conversão.
 
-// let escolha = prompt("Conversor de temperatura. Deseja converter para (informe o número da opção):\n1 -> Celsius\n2 -> Fahrenheit");
+// let escolha = Number(prompt("Conversor de temperatura. Deseja converter para (informe o número da opção):\n1 -> Celsius\n2 -> Fahrenheit"));
 
-// if (escolha == 1) {
-//     let temperatura = prompt("Informe a temperatura em Fahrenheit:");
-//     temperatura = (temperatura - 32) * (5 / 9);
-//     alert("Temperatura em graus Celsius: " + temperatura);
-// }
-
-// else if (escolha == 2) {
-//     let temperatura = prompt("Informe a temperatura em Celsius:");
-//     temperatura = (temperatura * (5 / 9)) + 32;
-//     alert("Temperatura em graus Fahrenheit: " + temperatura);
-// }
+// if (isNaN(escolha)) {
+//     alert("Valor informado é inválido.");
+// } 
 
 // else {
-//     alert("Escolha inválida. Tente novamente!");
+//     if (escolha == 1) {
+//         let temperatura = Number(prompt("Informe a temperatura em Fahrenheit:"));
+//         temperatura = (temperatura - 32) * (5 / 9);
+//         alert("Temperatura em graus Celsius: " + temperatura);
+//     }
+
+//     else if (escolha == 2) {
+//         let temperatura = Number(prompt("Informe a temperatura em Celsius:"));
+//         temperatura = (temperatura * (9 / 5)) + 32;
+//         alert("Temperatura em graus Fahrenheit: " + temperatura);
+//     }
+
+//     else {
+//         alert("Escolha inválida. Tente novamente!");
+//     }
 // }
 
 
@@ -98,16 +131,22 @@
 // Escreva um programa que pergunte a velocidade de um carro. Caso ultrapasse 80Km/h, exiba uma mensagem dizendo que o usuário foi multado. 
 // Nesse caso, exiba o valor da multa, cobrando R$5 por cada Km acima da velocidade permitida.
 
-// let velocidade = prompt("Verificação de multa.\nInforme a velocidade do carro (Km/h):");
+// let velocidade = Number(prompt("Verificação de multa.\nInforme a velocidade do carro (Km/h):"));
 
-// if (velocidade > 80) {
-//     let velocidade = velocidade - 80;
-//     let multa = velocidade * 5;
-//     alert("O motorista deste veículo foi multado!\nValor a ser pago: R$ " + multa +",00");
+// if (isNaN(velocidade)) {
+//     alert("Você não informou um valor válido.")
 // }
 
 // else {
-//     alert("O condutor está dentro do limite.\nNenhuma multa aplicada.")
+//     if (velocidade > 80) {
+//         let velocidadeAcima = velocidade - 80;
+//         let multa = velocidadeAcima * 5;
+//         alert("O motorista deste veículo foi multado!\nValor a ser pago: R$ " + multa.toFixed(2));      // Função para limitar a duas casas decimais 
+// }
+
+//     else {
+//         alert("O condutor está dentro do limite.\nNenhuma multa aplicada.")
+//     }
 // }
 
 
@@ -115,62 +154,84 @@
 // Faça um algoritmo que pergunte a distância que um passageiro deseja percorrer em Km. 
 // Calcule o preço da passagem, cobrando R$0.50 por Km para viagens até 200Km e R$0.45 para viagens mais longas.
 
-// let distancia = prompt("Informe a distância da sua viagem em Km/h para verificar o valor da sua passagem:");
+// let distancia = Number(prompt("Informe a distância da sua viagem em Km/h para verificar o valor da sua passagem:"));
 
-// if (distancia <= 200) {
-//     let passagem = distancia * 0.5;
-//     alert("O valor da sua passagem ficou em R$ " + passagem);
+// if (isNaN(distancia)) {
+//     alert("Você informou um valor inválido.")
 // }
 
 // else {
-//     let passagem = distancia * 0.45;
-//     alert("O valor da sua passagem ficou em R$ " + passagem);
+//     if (distancia <= 200) {
+//         let passagem = distancia * 0.5;
+//         alert("O valor da sua passagem ficou em R$ " + passagem.toFixed(2));
+//     }
+
+//     else {
+//         let passagem = distancia * 0.45;
+//         alert("O valor da sua passagem ficou em R$ " + passagem.toFixed(2));
+//     }
 // }
 
 
 // Exercício 7
 // Faça um programa que leia o ano de nascimento de uma pessoa, calcule a idade dela e depois mostre se ela pode ou não votar.
 
-// let anoNascimento = prompt("Para verificar se é necessário votar, informe o seu ano de nascimento:");
-// let idade = 2025 - anoNascimento;
+// let anoNascimento = Number(prompt("Para verificar se é necessário votar, informe o seu ano de nascimento:"));
 
-// if (idade < 16) {
-//     alert("Você possui " + idade + " anos de idade.\nVocê ainda NÃO PODE votar.");
-// }
-
-// else if (idade >= 16 && idade < 18) {
-//     alert("Você possui " + idade + " anos de idade.\nVocê possui VOTO OPCIONAL.");
+// if (isNaN(anoNascimento)) {
+//     alert("Você não informou uma idade válida.")
 // }
 
 // else {
-//     alert("Você possui " + idade + " anos de idade.\nVocê possui VOTO OBRIGATÓRIO.");
+//     let idade = 2025 - anoNascimento;
+
+//     if (idade < 16) {
+//         alert("Você possui " + idade + " anos de idade.\nVocê ainda NÃO PODE votar.");
+//     }
+
+//     else if (idade >= 16 && idade < 18) {
+//         alert("Você possui " + idade + " anos de idade.\nVocê possui VOTO OPCIONAL.");
+//     }
+
+//     else {
+//         alert("Você possui " + idade + " anos de idade.\nVocê possui VOTO OBRIGATÓRIO.");
+//     }
 // }
+
 
 
 //Exercício 8
 // Faça um algoritmo que leia um determinado ano e mostre se ele é ou não BISSEXTO.
 
-// let ano = prompt("Informe um ano para saber se ele é ou não bissexto:");
+// let ano = Number(prompt("Informe um ano para saber se ele é ou não bissexto:"));
 
-// if (ano % 4 == 0) {
-//     if (ano % 100 == 0) {
-//         if (ano % 400 == 0) {
-//             alert("O ano " + ano + " é um ano bissexto");
+// if (isNaN(ano)) {
+//     alert("Você não informou um ano válido.")
+// }
+
+// else {
+//     if (ano % 4 == 0) {
+//         if (ano % 100 == 0) {
+//             if (ano % 400 == 0) {
+//                 alert("O ano " + ano + " é um ano bissexto");
+//             } 
+            
+//             else {
+//                 alert("O ano " + ano + " não é bissexto.");
+//             }
 //         } 
         
 //         else {
-//             alert("O ano " + ano + " não é bissexto.");
+//             alert("O ano " + ano + " é um ano bissexto");
 //         }
 //     } 
-    
-//     else {
-//         alert("O ano " + ano + " é um ano bissexto");
-//     }
-// } 
 
-// else {
-//     alert("O ano " + ano + " não é bissexto.");
+//     else {
+//         alert("O ano " + ano + " não é bissexto.");
+//     }
 // }
+
+
 
 
 // Exercício 9 
@@ -180,20 +241,36 @@
 
 // let genero = prompt("Informe a primeira letra referente ao seu gênero:\nF -> Feminino\nM -> Masculino");
 
+// genero = genero.toUpperCase()   // Função para tornar maiúsculo o que o usuário digitar
+
 // if (genero == "M") {
-//     let idade = prompt("Informe a sua idade:");
+//     let idade2 = Number(prompt("Informe a sua idade:"));
 
-//     if (idade < 18) {
-//         alert("Você possui " + idade + " anos de idade.\nRestam " + (18 - idade) + " anos para ser necessário realizar o alistamento.");
-//     }
-
-//     else if (idade == 18) {
-//         alert("Você possui " + idade + " anos de idade.\nVocê necessita realizar o seu alistamento!");
+//     if (isNaN(idade2)) {
+//         alert("Você informou uma idade inválida.")
 //     }
 
 //     else {
-//         alert("Você possui " + idade + " anos de idade.\nSe passaram " + (idade - 18) + " anos do seu alistamento.");
+//         if (idade2 < 18) {
+//             alert("Você possui " + idade2 + " anos de idade.\nRestam " + (18 - idade2) + " anos para ser necessário realizar o alistamento.");
+//         }
+
+//         else if (idade2 == 18) {
+//             alert("Você possui " + idade2 + " anos de idade.\nVocê necessita realizar o seu alistamento!");
+//         }
+
+//         else {
+//             alert("Você possui " + idade2 + " anos de idade.\nSe passaram " + (idade2 - 18) + " anos do seu alistamento.");
+//         }
 //     }
+// }
+
+// else if (genero == "F") {
+//     alert("Não será necessário realizar alistamento.")
+// }
+
+// else {
+//     alert("Você informou um gênero inválido.")
 // }
 
 
@@ -209,21 +286,21 @@
 // A jornada de trabalho semanal de um funcionário é de 40 horas. O funcionário que trabalhar mais de 40 horas receberá hora extra, cujo cálculo é o valor da hora regular com um acréscimo de 50%. 
 // Escreva um algoritmo que leia o número de horas trabalhadas em um mês, o salário por hora e escreva o salário total do funcionário, que deverá ser acrescido das horas extras, caso tenham sido trabalhadas (considere que o mês possua 4 semanas exatas).
 
-alert("Verificação de recebimento de hora extra.");
+// alert("Verificação de recebimento de hora extra.");
 
-let horasTrabalhadasMes = prompt("Informe quantas horas você trabalhou durante esse mês: ");
-let salarioHora = prompt("Informe quanto é o seu salário por hora: ");
-let salarioTotal;
+// let horasTrabalhadasMes = prompt("Informe quantas horas você trabalhou durante esse mês: ");
+// let salarioHora = prompt("Informe quanto é o seu salário por hora: ");
+// let salarioTotal;
 
-let horaExtra = horasTrabalhadasMes - (40 * 4);
+// let horaExtra = horasTrabalhadasMes - (40 * 4);
 
-if (horaExtra <= 0) {
-    alert("Você não receberá hora extra.")
-}
+// if (horaExtra <= 0) {
+//     alert("Você não receberá hora extra.")
+// }
 
-else {
-    alert("")
-}
+// else {
+    
+// }
 
 
 
@@ -262,34 +339,40 @@ else {
 // let anosTrabalhados = Number(prompt("Por último, informe há quantos anos você trabalha na empresa:"))
 // let novoSalario = 0 
 
-// if (genero == "F") {
-//     if (anosTrabalhados < 15) {
-//         novoSalario = salarioAtual + (salarioAtual * (5 / 100));
-//     }
-
-//     else if (anosTrabalhados >= 15 && anosTrabalhados <= 20 ) {
-//         novoSalario = salarioAtual + (salarioAtual * (12 / 100));
-//     }
-
-//     else {
-//         novoSalario = salarioAtual + (salarioAtual * (23 / 100));
-//     }
-
-    
+// if (isNaN(salarioAtual) || isNaN(anosTrabalhados) || salarioAtual < 0 || anosTrabalhados < 0) {
+//     alert("Algum dos valores informados é inválido.")
 // }
 
-// else if (genero == "M") {
-//     if (anosTrabalhados < 20) {
-//         novoSalario = salarioAtual + (salarioAtual * (3 / 100));
+// else {
+//     genero = genero.toUpperCase()
+
+//     if (genero == "F") {
+//         if (anosTrabalhados < 15) {
+//             novoSalario = salarioAtual + (salarioAtual * (5 / 100));
+//         }
+
+//         else if (anosTrabalhados >= 15 && anosTrabalhados <= 20 ) {
+//             novoSalario = salarioAtual + (salarioAtual * (12 / 100));
+//         }
+
+//         else {
+//             novoSalario = salarioAtual + (salarioAtual * (23 / 100));
+//         }
 //     }
 
-//     else if (anosTrabalhados >= 20 && anosTrabalhados <= 30 ) {
-//         novoSalario = salarioAtual + (salarioAtual * (13 / 100));
+//     else if (genero == "M") {
+//         if (anosTrabalhados < 20) {
+//             novoSalario = salarioAtual + (salarioAtual * (3 / 100));
+//         }
+
+//         else if (anosTrabalhados >= 20 && anosTrabalhados <= 30 ) {
+//             novoSalario = salarioAtual + (salarioAtual * (13 / 100));
+//         }
+
+//         else {
+//             novoSalario = salarioAtual + (salarioAtual * (25 / 100));
+//         }
 //     }
 
-//     else {
-//         novoSalario = salarioAtual + (salarioAtual * (25 / 100));
-//     }
+//     alert("O seu novo salário é de R$ " + novoSalario.toFixed(2))
 // }
-
-// alert("O seu novo salário é de R$ " + novoSalario)
