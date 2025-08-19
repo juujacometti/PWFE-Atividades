@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    text-align: center;
+}
+
+#tituloBingo {
+    background: radial-gradient(circle,rgba(169, 40, 126, 1) 0%, rgba(70, 1, 44, 1) 100%);
+    color: white;
+    padding: 15px;
+    box-shadow: 0 2px 8px #00000056;
+    font-size: 45px;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    
+}
+
+table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+tbody {
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+tr {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+
+th{
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+}
+
+#B{
+    background-color: #46012c;
+    color: white;
+}
+
+#I{
+    background-color: #671040;
+    color: white;
+}
+
+#N{
+    background-color: #8c1e5c;
+    color: white;
+}
+
+#G{
+    background-color: #a9287e;
+    color: white;
+}
+
+#O {
+    background-color: #d336a8;
+    color: white;
+}
+
+td {
+    border-radius: 5px;
+    background-color: #eeeeee;
+    display: flex;
+    margin: 5px;
+    padding: 10px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#caixaNumero {
+    border-radius: 15px;
+    background-color: #a9287e;
+    width: fit-content;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#tituloNumeroSorteado {
+    font-size: 20px;
+    color: white;
+}
+
+#numeroSorteado {
+    margin-top: 15px;
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #9f005a;
+    padding: 10px;
+    width: 365px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#botoesCaixaNumero {
+    display: flex;
+}
+
+.botoes {
+    border: none;
+    border-radius: 10px;
+    background-color: #e29fce;
+    color: #6a0242;
+    font-weight: bold;
+    margin: 10px;
+    padding: 15px;
+    gap: 8px;
+}
+
+.botoes:hover {
+    background-color: #46012c;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+
