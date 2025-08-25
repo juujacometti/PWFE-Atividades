@@ -95,6 +95,12 @@ td {
 
 }
 
+#organizarBotoes {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
 #caixaNumero {
     border-radius: 15px;
     background-color: #a9287e;
@@ -144,6 +150,18 @@ td {
     background-color: #46012c;
     color: rgb(255, 255, 255);
     cursor: pointer;
+}
+
+#botaoHistorico {
+    border: none;
+    border-radius: 10px;
+    background-color: #eeeeee;
+    color: #6a0242;
+    font-weight: bold;
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    align-self: flex-end;
 }
 
 
