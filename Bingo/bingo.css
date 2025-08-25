@@ -135,7 +135,7 @@ td {
     display: flex;
 }
 
-.botoes {
+.botoes{
     border: none;
     border-radius: 10px;
     background-color: #e29fce;
@@ -146,7 +146,7 @@ td {
     gap: 8px;
 }
 
-.botoes:hover {
+.botoes:hover{
     background-color: #46012c;
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -164,4 +164,26 @@ td {
     align-self: flex-end;
 }
 
+
+#botaoHistorico:hover {
+    background-color: #654558;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/* Confetes */
+.confete.confete {
+  position: fixed;
+  top: -20px;    /* Começa fora da tela para não deixar os confetes estáticos no topo */
+  opacity: 0.8;
+  border-radius: 50%;    /* Deixar os confetes redondos*/
+  animation: cair 5s linear forwards;
+}
+
+/* Animação de queda */
+@keyframes cair {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
 
