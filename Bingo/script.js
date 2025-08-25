@@ -1,6 +1,7 @@
 // Sorteio de números 
 const sortearNumero = document.getElementById("sortearNumero");    // Procura no HTML o id 'sortearNumero'
 sortearNumero.addEventListener("click", sorteio);
+
 let historicoNumeros = [];    // Lista para guardar os números já sorteados, impedindo a repetição
 
 // Função para realizar o sorteio de números
@@ -36,7 +37,7 @@ function sorteio() {
 
     } while (historicoNumeros.includes(numeroSorteado));    // Repete o sorteio caso o número sorteado já tenha saído antes
 
-    historicoNumeros.push(numeroSorteado);    // Adiciona o novo número sorteado a lista de histórico
+    historicoNumeros.push(letra + " - " + numeroSorteado);    // Adiciona o novo número sorteado a lista de histórico
     document.getElementById("numeroSorteado").textContent = letra + " - " + numeroSorteado; // mostra na tela
 
     // Destaque de números sorteados na tabela 
@@ -51,8 +52,26 @@ function sorteio() {
             celula.style.color = "#ffffff";    // Altera a cor do texto dentro da célula
         }
     }
-}
 
+    caixaHistorico.style.display = "flex";
+    historico()
+}  
+
+
+// Mostrar históico de números já sorteados
+function historico() {
+    const caixaHistorico = document.getElementById("caixaHistorico");
+    caixaHistorico.innerHTML = "";  // Limpa o histórico antes de mostrar
+
+    historicoNumeros.forEach(numero => {
+        const pHistorico = document.createElement('p'); 
+        pHistorico.textContent = numero;  
+        pHistorico.style.color = "#8c1e5c"
+        pHistorico.style.width = "60px";    // largura fixa para alinhar colunas
+        pHistorico.style.textAlign = "center";       
+        caixaHistorico.appendChild(pHistorico);                 
+    });
+}
 
 // Animação de confetes + botão 'bingo'
 // Ao clicar no botão, os confetes serão lançados
@@ -103,7 +122,10 @@ function reiniciar() {
         celula.style.backgroundColor = "";    // Limpa o background 
         celula.style.color = "";    // Limpa a cor do texto 
     });
+
+    const caixaHistorico = document.getElementById("caixaHistorico");
+    caixaHistorico.style.display = "none";    // Esconde a caixa que mostra o histórico de números sorteados
 }
 
 
-// 
+
